@@ -11,5 +11,14 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
 
+install:
+   - mkdir gtest
+   - cd gtest
+   - export LIBRARY_PATH=$(pwd)
+   - cp -r /usr/src/gtest/* ./
+   - cmake -D CMAKE_INSTALL_PREFIX:PATH=./ ./
+   - make
+   - cd -
+
 script:
     - make test
