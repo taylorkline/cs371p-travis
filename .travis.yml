@@ -1,0 +1,15 @@
+language: cpp
+
+addons:
+  apt:
+    packages:
+      - g++-5
+      - libboost-dev
+      - doxygen
+      - libgtest-dev
+      - valgrind
+    sources:
+      - ubuntu-toolchain-r-test
+
+script:
+    - make test
